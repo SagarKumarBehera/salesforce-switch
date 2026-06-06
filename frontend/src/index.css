@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #f37021; /* Salesforce Toolkit Orange */
+  --color-brand-hover: #d65a12;
+  --color-brand-active: #b5490d;
+  --color-brand-light: #fff5eb;
+  --color-success: #2e844a;
+  --color-error: #ea001e;
+  --color-warning: #ffb75d;
+  --color-info: #00a1e0;
+}
+
+body {
+  @apply bg-white text-slate-700 font-sans antialiased;
+}
+
+.btn {
+  @apply px-4 py-1.5 rounded-sm font-bold transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 text-sm uppercase;
+}
+
+.btn-primary {
+  @apply bg-brand text-white hover:bg-brand-hover active:bg-brand-active disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btn-donate {
+  @apply bg-[#ffb75d] text-slate-800 hover:bg-[#ffa02e] rounded-full px-6 py-1 normal-case font-bold;
+}
+
+.card {
+  @apply bg-white rounded-sm border border-slate-200 overflow-hidden;
+}
+
+.input-field {
+  @apply px-3 py-1.5 bg-white border border-slate-300 rounded-sm focus:border-brand outline-none transition-all text-sm;
+}
+
+/* Notice boxes like in the image */
+.notice-box {
+  @apply p-4 mb-4 text-sm relative border-l-4;
+}
+
+.notice-yellow {
+  @apply bg-[#fcf8e3] border-[#faebcc] text-[#8a6d3b];
+}
+
+.notice-blue {
+  @apply bg-[#d9edf7] border-[#bce8f1] text-[#31708f];
+}
+
+.close-btn {
+  @apply absolute top-2 right-2 text-slate-400 hover:text-slate-600 cursor-pointer text-lg leading-none;
+}
+
+/* Header styles */
+.app-header {
+  @apply bg-[#f8f8f8] border-b border-slate-200 py-2 px-6 flex items-center justify-between text-sm text-slate-500;
+}
+
+.header-link {
+  @apply hover:text-slate-800 transition-colors;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
